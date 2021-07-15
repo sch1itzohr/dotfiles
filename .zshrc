@@ -1,5 +1,8 @@
 export PATH=$HOME/bin:$HOME/.emacs.d/bin:/usr/local/bin:$PATH
 
+export GOPATH=~/Code/golib/
+export GOPATH=$GOPATH:~/Code/goprojects/
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -61,6 +64,7 @@ plugins=(
   tmux
   python
   pip
+  golang
 )
 
 source $ZSH/oh-my-zsh.sh
