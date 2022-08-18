@@ -1,7 +1,6 @@
-export PATH=$HOME/bin:$HOME/.emacs.d/bin:/usr/local/bin:$PATH
+export GOPATH=/home/bra1nout/Code/golib/
+export PATH=$HOME/bin:$HOME/.emacs.d/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
-export GOPATH=~/Code/golib/
-export GOPATH=$GOPATH:~/Code/goprojects/
 
 export ZSH="$HOME/.oh-my-zsh"
 
