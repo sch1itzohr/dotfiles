@@ -101,6 +101,7 @@ brew install iterm2
 brew install autojump
 brew install tmux
 brew install spaceship
+brew install jq
 
 # Remove outdated versions from the cellar.
 brew cleanup
