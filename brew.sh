@@ -103,5 +103,9 @@ brew install tmux
 brew install spaceship
 brew install jq
 
+# zsh plugins
+brew install zsh-syntax-highlighting
+brew install zsh-autocomplete
+
 # Remove outdated versions from the cellar.
 brew cleanup

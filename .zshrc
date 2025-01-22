@@ -1,13 +1,16 @@
-export GOPATH=/home/bra1nout/Code/golib/
+export GOPATH=/Users/anton_shageev/Code/golib/
 export PATH=$HOME/bin:$HOME/.emacs.d/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
+if [[ -f ~/.zshrc_local ]]; then
+  source ~/.zshrc_local
+fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
-# Most liked themes: 
+# Most liked themes:
 # powerlevel10k
 # spaceship
 
@@ -34,23 +37,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 HIST_STAMPS="dd/mm/yyyy" # date stamps
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -64,25 +50,16 @@ plugins=(
   python
   pip
   golang
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Zed alias
+alias zed="open -a /Applications/Zed.app -n"
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Zsh highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
