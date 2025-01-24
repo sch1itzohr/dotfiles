@@ -47,12 +47,6 @@ brew install screen
 brew install php
 brew install gmp
 
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
-
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install aircrack-ng
 brew install bfg
@@ -81,7 +75,7 @@ brew install xz
 
 # Install other useful binaries.
 brew install ack
-#brew install exiv2
+brew install automake
 brew install git
 brew install git-lfs
 brew install gs
