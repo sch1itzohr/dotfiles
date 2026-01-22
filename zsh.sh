@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Function to detect OS
 detect_os() {
     if [[ "$OSTYPE" == "darwin"* ]]; then

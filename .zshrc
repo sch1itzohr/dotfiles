@@ -1,9 +1,5 @@
-export GOPATH=/Users/anton_shageev/Code/golib/
-export PATH=$HOME/bin:$HOME/.emacs.d/bin:/usr/local/bin:$GOPATH/bin:$PATH
-
-if [[ -f ~/.zshrc_local ]]; then
-  source ~/.zshrc_local
-fi
+export GOPATH=$HOME/Code/golib
+export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -50,9 +46,8 @@ plugins=(
   python
   pip
   golang
-  zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-autocomplete
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -62,4 +57,7 @@ alias zed="open -a /Applications/Zed.app -n"
 
 # Zsh highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+if [[ -f ~/.zshrc_local ]]; then
+  source ~/.zshrc_local
+fi
