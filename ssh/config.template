@@ -1,0 +1,16 @@
+# SSH config template
+# Copy this to ~/.ssh/config and fill in your details
+
+# GitHub.com (SSH key-based auth)
+# Host github.com
+#   User git
+#   Hostname github.com
+#   IdentityFile ~/.ssh/id_ed25519
+#   IdentitiesOnly yes
+#   AddKeysToAgent yes
+
+# Generic defaults for all hosts
+# Host *
+#   ServerAliveInterval 60
+#   ServerAliveCountMax 3
+#   AddKeysToAgent yes

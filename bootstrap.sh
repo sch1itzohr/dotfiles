@@ -27,6 +27,10 @@ function doIt() {
 		--exclude "install.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
+		--exclude "brew.sh" \
+		--exclude "apt.sh" \
+		--exclude "zsh.sh" \
+		--exclude "ssh/" \
 		-avh --no-perms . ~;
 
 	# Only source .zshrc if zsh is installed

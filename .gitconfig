@@ -1,6 +1,7 @@
-[include]
-        path = ~/.gitconfig_local
 [alias]
+
+  # Show locally created branches sorted by created time
+  lb = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso8601) %(refname:short)'
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -67,6 +68,11 @@
 
 	# Show the user email for the current repository.
 	whoami = config user.email
+
+        # Show root for current repository
+        root = rev-parse --show-toplevel
+	
+        rebase-main = "!f(){\n  set -e\n  STASHED=0\n  \n  # Stash only if dirty (includes untracked files)\n  if [ -n \"$(git status --porcelain)\" ]; then\n    git stash push -u -m \"Auto-stash before rebase-main $(date +%Y%m%d-%H%M%S)\"\n    STASHED=1\n  fi\n\n  # Store current branch in case git switch - fails\n  ORIGINAL_BRANCH=$(git branch --show-current)\n  \n  git switch main\n  git pull --rebase\n  git switch \"$ORIGINAL_BRANCH\"\n  git rebase main\n\n  # Re-apply only if we actually stashed\n  if [ \"$STASHED\" -eq 1 ]; then\n    git stash pop\n  fi\n}; f"
 
 [apply]
 
@@ -157,6 +163,7 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+	autoSetupRemote = true
 
 # URL shorthands
 
@@ -183,4 +190,6 @@
 [init]
 
 	defaultBranch = main
-
+[user]
+	name = Anton Shageev
+	email = # TODO: your@email.com

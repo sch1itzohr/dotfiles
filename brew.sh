@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-set -e
+# macOS only - requires Homebrew
+if [[ "$(uname)" != "Darwin" ]]; then
+  echo "brew.sh is macOS-only. For Linux see apt.sh."
+  exit 1
+fi
 
 # Install command-line tools using Homebrew.
 if ! command -v brew &> /dev/null; then
